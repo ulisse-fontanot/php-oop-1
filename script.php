@@ -12,7 +12,7 @@ class Movie {
     public $regista;
     public $genere;
     public $prezzo;
-    private $sconto = 25;
+    public $sconto = 25;
 
     public function __construct($_titolo,$_regista,$_genere,$_prezzo){
         $this->titolo = $_titolo;
@@ -23,12 +23,12 @@ class Movie {
 
     public function setSconto($_sconto){
         if ($_genere = 'fantascienza') {
-            $this->sconto = $_prezzo - (($_prezzo / 100) * $_sconto);
+            $this->prezzo = $_prezzo - (($_prezzo / 100) * $_sconto);
         }
     }
 
     public function getSconto(){
-        return $this->sconto;
+        return $this->prezzo;
     }
 
 }
